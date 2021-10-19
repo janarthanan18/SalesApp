@@ -19,13 +19,7 @@ export class ProfilePage implements OnInit {
     this.salesid = JSON.parse(localStorage.getItem('salesId'));
    console.log(this.salesid);
  
-  //  const params: any = {};
-  //  params.sales_id = '3';
-  //  return this.httpClient.get('https://premierplusgroup.com/public/api/profile?sales_id=3' ).subscribe((res: any ) => {
-  //    console.log(res);
-  //    this.user =res;
-
-  //  })
+ 
     this.profile();
   }
 
