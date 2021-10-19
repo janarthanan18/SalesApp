@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Unit Commission</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ 
+
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <!-- <th>S.No	</th> -->
+        <th>Developer Name	</th>
+        <th>Property  </th>
+        <th>Lot Number	 </th>
+        <th>Unit Cost</th>
+        <th>Net Price</th>
+        <th>Date</th>
+        <th>Commisssion</th>
+        <th>Bonus </th>
+        <th>Total Commission </th>
+        <!-- <th>Draw Payment</th>
+        <th>Deposit</th>
+        <th>Balance Down Payment </th>
+        <th>Down Payment Type </th>
+        <th>Unit Commission Rate	</th>
+        <th>Type	</th>
+        <th>Unit Cost</th>
+        <th>Solded Date	</th> -->
+
+      
+
+      </tr>
+      <tr *ngIf =" unit">
+     
+        <td>{{unit.developer_name}}	</td> 
+        <td>{{unit.property_name}}</td>
+        <td>{{unit.lot_number}}	</td>
+        <td>{{unit.unit_cost}}</td>
+        <td>{{unit.net_price}}</td>
+        <td>{{unit.solded_date}}</td>
+        <td>{{unit.commission}}</td>
+        <td>{{unit.bonus}}</td>
+        <td>{{unit.total_commission}}</td>
+
+
+            <!-- <td>
+          <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><ion-icon name="ellipsis-vertical-outline"></ion-icon></a>
+            <div class="dropdown-menu dropdown-menu-right ">
+              <ion-anchor class="dropdown-item">Edit</ion-anchor><br>
+              <ion-anchor class="dropdown-item" >Delete</ion-anchor>
+           </div>
+        </div>   
+        </td> -->
+
+
+      </tr>
+
+      <tr *ngIf="amt">
+        <th id="total" colspan="8"><b>Total Amount</b></th>
+        <td style=" font-weight: 600;">{{amt.total_amount}}</td>
+      </tr>
+      <!-- <tr *ngIf="amt">
+        <td>Total Amount   {{amt.total_amount}}  </td>
+      </tr> -->
+      <!-- <tr>
+        <td>1</td>
+        <td>KK Builders</td>
+        <td>House	</td>
+        <td>Cluster House	</td>
+        <td>PTD001</td>
+        <td>22/05/21	</td>
+
+        <td>5%	</td>
+      </tr> -->
+    
+    </table>
+  </div>
+
+</ion-content>

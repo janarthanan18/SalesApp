@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Lot Booked</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <h4>Booked by Customer</h4>
+
+  <ion-row *ngIf ="customer">
+    <ion-col size="12">
+      <ion-label position="floating">Name</ion-label>
+       <ion-item>
+        <ion-input  disabled> {{customer.first_name}}</ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label position="floating">Status</ion-label>
+  
+      <ion-item>
+        <ion-input  disabled> Booked</ion-input>
+
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-content>

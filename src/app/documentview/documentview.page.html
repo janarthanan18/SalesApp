@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">View Document</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>S.no	</th>
+        <th>Document Name	</th>
+        <th>Document Type</th>
+        <th>Uploading Date</th>
+        <!-- <th>Cusromer Id </th> -->
+        <!-- <th>Date	</th> -->
+        <th>Action</th>
+      
+
+      </tr>
+      <tr *ngFor ="let data of document">
+        <td>{{data.id}}	</td>
+
+        <td>{{data.document_name}}</td>
+        <td>{{data.document_type}}		</td>
+        <td>{{data.updated_at}}	</td>
+  
+
+         <td>
+          <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><ion-icon name="ellipsis-vertical-outline"></ion-icon></a>
+            <div class="dropdown-menu dropdown-menu-right ">
+              <ion-text class="dropdown-item" (click)="gotoDocument(data.document_name)">View</ion-text><br>
+           </div>
+        </div>   
+        </td>
+
+
+      </tr>
+    
+    
+    </table>
+  </div>
+
+</ion-content>

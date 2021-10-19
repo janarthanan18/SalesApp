@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Social Media </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<ion-card class="card1"  *ngFor=" let user of customer" (click)="gotoNext(user.id)">
+<strong>{{user.first_name}}</strong>
+<p>{{user.property_category}}</p>
+</ion-card>
+</ion-content>

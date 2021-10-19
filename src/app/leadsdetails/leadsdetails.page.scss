@@ -1,0 +1,95 @@
+ion-header {
+    padding: 8px;
+}
+
+img {
+    width: 73px;
+}
+h3 {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+    font-weight: 800;
+}
+.header {
+    display: flex;
+    justify-content: space-evenly;
+}
+ion-label {
+    margin-left: 18px;
+}
+strong {
+    margin-bottom: 11px;
+    font-weight: 600;
+    color: black;
+    font-size: 18px;
+}
+p {
+    margin-top: auto;
+   margin-bottom: 11px;
+   font-size: 18px;
+
+    // margin-left: 58px;
+}
+.col1 {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+ion-card {
+    padding: 5px;
+}
+ion-list {
+    margin-top: 10px;
+}
+.card1 {
+    padding: 8px;
+    width: 43%;
+    height: 85px;
+    background: #fe9996;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card2 {
+    padding: 8px;
+    width: 43%;
+    height: 85px;
+    background: #4aa4ed;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card3 {
+    padding: 8px;
+    width: 43%;
+    height: 85px;
+    background: #3ed2be;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+// .segment1 {
+//     border: 1px solid #9a55ff;
+//     background: #9a55ff;
+//     border-radius: 42px;
+//     color: white;
+// }
+  
+
+.icon1 {
+    float: right;
+    margin: 16px 21px 0px 0px;
+}
+ion-segment-button {
+    font-size: 13px;
+    color: black;
+    font-weight: 600;
+}

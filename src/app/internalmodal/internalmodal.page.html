@@ -1,0 +1,219 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;margin-bottom: 15px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Add New Internal Lead</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="internal" (ngSubmit)="internalForm()">
+      <ion-row>
+        <ion-col size="6">
+          <ion-label position="floating">First Name</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="first_name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Last Name</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="last_name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col size="6">
+          <ion-label position="floating">Passport</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="passport"></ion-input>
+          </ion-item>
+        </ion-col> -->
+        <ion-col size="6">
+
+          <ion-label position="floating">Email</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+
+          <ion-label position="floating">Age</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="age"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Gender</ion-label>
+
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="gender">
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-item>
+            <ion-input type="number" formControlName="phone_number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col size="6">
+          <ion-label position="floating">Address Line 1</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="address_line1"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Address Line 2</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="address_line2"></ion-input>
+          </ion-item>
+        </ion-col> -->
+        <ion-col size="6">
+          <ion-label position="floating">Postal Code</ion-label>
+          <ion-item>
+            <ion-input type="number" formControlName="postal_code"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Occupation</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="occupation">
+              <ion-select-option value="private">Private Employee</ion-select-option>
+              <ion-select-option value="Govt.Servant">Government Servant</ion-select-option>
+              <ion-select-option value="Self Employed">Self Employed</ion-select-option>
+              <ion-select-option value="Professional">Professional</ion-select-option>
+              <ion-select-option value="Others">Others</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Salary Range</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="salary_range">
+              <ion-select-option value="Less 2000">Less 2000</ion-select-option>
+              <ion-select-option value="2,001 – 3,000">2,001 – 3,000</ion-select-option>
+              <ion-select-option value="3,001 – 5,000">3,001 – 5,000</ion-select-option>
+              <ion-select-option value="5,001 – 7,000">5,001 – 7,000</ion-select-option>
+              <ion-select-option value="7,001 – 10,000">7,001 – 10,000</ion-select-option>
+              <ion-select-option value="10,001 and above">10,001 and above</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-label position="floating">Property Prefferred</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="property_category_preferred">
+              <ion-select-option value="Terrace houses">Terrace houses</ion-select-option>
+              <ion-select-option value="Cluster houses">Cluster houses</ion-select-option>
+              <ion-select-option value="Semi-detached">Semi-detached</ion-select-option>
+              <ion-select-option value="Bungalow">Bungalow</ion-select-option>
+              <ion-select-option value="Service apt/condo">Service apt/condo</ion-select-option>
+              <ion-select-option value="Shop office/commercial">Shop office/commercial</ion-select-option>
+              <ion-select-option value="Industrial">Industrial</ion-select-option>
+              <ion-select-option value="Office/Retail">Office/Retail</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Property price Prefferred</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="property_price_preferred">
+            
+
+              <ion-select-option value="RM 300,00-RM  500,000">RM 300,00-RM  500,000</ion-select-option>
+              <ion-select-option value="RM 500,001-RM  800,000">RM 500,001-RM  800,000</ion-select-option>
+              <ion-select-option value="RM 800,001-RM  1,000,000">RM 800,001-RM  1,000,000</ion-select-option>
+              <ion-select-option value="RM 1,000,001-RM  1,500,000">RM 1,000,001-RM  1,500,000</ion-select-option>
+              <ion-select-option value="RM 1,500,001-RM  2,000,000">RM 1,500,001-RM  2,000,000</ion-select-option>
+              <ion-select-option value="Above RM  2,000,000">Above RM  2,000,000</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-label position="floating">Nationality</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="nationality">
+              <ion-select-option value="malaysian">Malaysian</ion-select-option>
+              <ion-select-option value="singaporen">Singaporean</ion-select-option>
+              <ion-select-option value="indonesian">Indonesian</ion-select-option>
+              <ion-select-option value="Others">Others</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+       
+        <ion-col size="6">
+          <ion-label position="floating">State</ion-label>
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="state">
+              <ion-select-option value="johor">Johor</ion-select-option>
+              <ion-select-option value="kedah">Kedah</ion-select-option>
+              <ion-select-option value="kelantan">Kelantan</ion-select-option>
+              <ion-select-option value="malacca">Malacca</ion-select-option>
+              <ion-select-option value="negeri sembilan">Negeri Sembilan</ion-select-option>
+              <ion-select-option value="pahang">Pahang</ion-select-option>
+              <ion-select-option value="penang">Penang</ion-select-option>
+              <ion-select-option value="perak">Perak</ion-select-option>
+              <ion-select-option value="perlis">Perlis</ion-select-option>
+              <ion-select-option value="sabah">sabah</ion-select-option>
+              <ion-select-option value="sarawak">Sarawak</ion-select-option>
+              <ion-select-option value="selangor">Selangor</ion-select-option>
+              <ion-select-option value="terengganu">Terengganu</ion-select-option>
+              <!-- <ion-select-option value="labuan">Labuan</ion-select-option> -->
+
+
+              <ion-select-option value="Others">Others</ion-select-option>
+             </ion-select>
+          </ion-item>
+        </ion-col>
+
+      
+        <!-- <ion-col size="6">
+          <ion-label position="floating">Country</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="country"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Province</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="province"></ion-input>
+          </ion-item>
+        </ion-col> -->
+
+
+        <!-- <ion-col size="6">
+          <ion-label position="floating">Created By</ion-label>
+          <ion-item>
+            <ion-datetime displayFormat="MM DD YY" formControlName="created_by" placeholder="Select Date">
+            </ion-datetime>
+          </ion-item>
+        </ion-col> -->
+
+
+      </ion-row>
+      <ion-button expand="block" mode="ios" type="submit">Submit</ion-button>
+    </form>
+  </ion-grid>
+</ion-content>

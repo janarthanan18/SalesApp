@@ -1,0 +1,75 @@
+<ion-toolbar>
+  <ion-buttons slot="start" style="position: absolute;">
+    <ion-button (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <!-- <ion-title class="ion-text-center">Deals</ion-title> -->
+</ion-toolbar>
+
+
+<ion-content class="ion-padding">
+  <div class="setting">
+    <h3>My Tracker </h3>
+    <ion-icon name="settings-outline" class="icon"></ion-icon>
+  </div>
+
+  <br>
+  <section>
+    <ion-row class="title">
+      <ion-col size="8" class="col1">
+        <ion-text> Good Afternoon</ion-text>
+        <Strong>Ahmad Abu</Strong>
+        <ion-list>
+
+          <ion-label>30%</ion-label>
+
+          <ion-progress-bar value="0.3" color="success"></ion-progress-bar>
+        </ion-list>
+      </ion-col>
+
+    
+      <ion-col size="4">
+          <!-- Add Imgae -->
+            <img>
+      </ion-col>
+    </ion-row>
+
+
+  </section>
+
+<br>  
+<ion-card class="card">
+  <div class="week">
+   <ion-text style="color: black;">Week</ion-text>
+   <ion-icon name="chevron-down-outline"></ion-icon>
+  </div>
+</ion-card>
+  <div>
+    <ion-row>
+      <ion-col size="6" >
+        <ion-card class="col2" >
+          <ion-label class="label1">Infaq</ion-label>
+        
+          <div class="track1">
+            <ion-icon name="checkmark-circle-outline" class="icon1"></ion-icon>
+            <ion-text>Track</ion-text>
+          </div>
+        </ion-card>
+      
+      </ion-col>
+      <ion-col  size="6">
+        <ion-card class="col3">
+          <ion-label class="label1">Solah</ion-label>
+         
+          <div class="track2">
+            <ion-icon name="add-outline" class="icon1"></ion-icon>
+            <ion-text>Track</ion-text>
+          </div>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </div>
+ 
+</ion-content>

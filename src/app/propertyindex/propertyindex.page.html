@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Site Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+
+  <div *ngFor ="let data of propertylist" >
+  <section class="sec1" >
+    <ion-icon class="icon1" name="person-sharp" slot="start"></ion-icon>
+    <strong>{{data.developer_name}}</strong>
+  </section >
+<br>
+  <ion-row>
+    <ion-col size="6"  *ngFor="let value of data.list" >
+
+      <ion-card>
+        <div>
+         <img src="{{value.image_path}}">
+       <div class="divCss">
+         <b>{{value.place_name}} </b>
+         <div class="dropdown dropdown-action">
+          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><ion-icon name="ellipsis-vertical-outline"></ion-icon></a>
+          <div class="dropdown-menu dropdown-menu-right ">
+            <ion-text class="dropdown-item" (click)="gotoBook(value.property_id)" style="font-size: 16px !important;">Book</ion-text><br>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+</div>
+   
+<br>
+
+</ion-content>

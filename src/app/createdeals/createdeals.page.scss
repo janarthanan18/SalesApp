@@ -1,0 +1,28 @@
+ion-item  {
+      
+    margin-top: 12px;
+    background: aliceblue;
+    border-radius: 7px;
+   box-shadow: 0px 0px 3px 0px #35cddc;
+}
+ion-label {
+    color: #cd5bb7;
+    margin-top: 2px !important;
+    margin-bottom: auto !important;
+}
+h3 {
+    margin-top: 11px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    line-height: 1;
+    font-size: 18px;
+    margin-left: 6px;
+}
+ion-button {
+	height:40px;
+    color: white;
+    --background: linear-gradient(to right, #9a55ff 0%, #fc6075 100%);
+    font-family: revert;
+    font-weight: 700;
+    margin-top: 10px;
+}

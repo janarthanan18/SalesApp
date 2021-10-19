@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Register Assign </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<ion-card class="card1"  *ngFor="let lead of leads"  (click)="gotoNext(lead.id)">
+
+  <strong>{{lead.first_name}} </strong>
+
+  <p>{{lead.type_of_property_preferred}}</p>
+
+
+</ion-card>
+<!-- <ion-card class="card1">
+
+  <strong>William </strong>
+  <p>KK Builders</p>
+
+</ion-card>
+<ion-card class="card1">
+
+  <strong>Peterson </strong>
+  <p>KK Builders</p>
+
+</ion-card>
+<ion-card class="card1">
+
+  <strong>John Doe </strong>
+  <p>KK Builders</p>
+
+</ion-card> -->
+
+</ion-content>

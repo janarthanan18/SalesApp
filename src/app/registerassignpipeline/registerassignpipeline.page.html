@@ -1,0 +1,774 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Register Assign Pipeline</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-row class="NewRow" *ngIf="value">
+      <ion-col size="col-4" class="NewCol">
+        <p>Customer Name </p>
+        <strong>{{value.first_name}} {{value.last_name}}</strong>
+      </ion-col>
+
+      <ion-col size="col-4" class="NewCol">
+        <p>Phone</p>
+        <strong>{{value.mobile_number}}</strong>
+      </ion-col>
+
+      <ion-col size="col-4" class="NewCol">
+        <p>Email </p>
+        <strong>{{value.email}}</strong>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+  <!-- <br> -->
+  <!-- <section class="sec1">
+  <strong>Pipeline </strong> 
+
+ 
+ </section> -->
+  <!-- <section style="padding: 11px;">
+    <div class="pipeline-small flat">
+      <a class="won noselect tipped-top planning" data-toggle="tooltip" data-placement="top" title="Prospecting"
+        data-original-title="stage: Prospecting">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">Prospecting</span>
+      </a>
+      <a class="won noselect tipped-top" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="stage: Qualification">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">Qualification</span>
+      </a>
+      <a class="won noselect tipped-top" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="stage: Needs Analysis">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">Analysis</span>
+      </a>
+      <a class="won noselect tipped-top" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="stage: Proposal">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">Proposal</span>
+      </a>
+      <a class="won noselect tipped-top" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="stage: Negotiation">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">Negotate</span>
+      </a>
+      <a class="won noselect tipped-top planning" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="stage: Closed Won">
+        <span class="stretched-link" data-toggle="modal" data-target="#deal-details">CloseWin</span>
+      </a>
+
+    </div>
+  </section> -->
+
+  <!-- <section style="padding: 11px;" *ngIf="pipe">
+    <div class="pipeline-small flat" *ngIf="pipe == null">
+      <a class="won noselect tipped-top pipeline  planning"  title="Prospecting"
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"    id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"   
+        (click)="pipeline($event)" id="Appointment"  data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Prospecting'">
+      <a class="won noselect tipped-top pipeline "  data-value="Prospecting"
+      (click)="pipeline($event)" title="Prospecting" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Phone Call"
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Appointment"
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Site Booking"
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Negotiation"
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation"  >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Closed Deals"
+      (click)="pipeline($event)"   id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Phone Call'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting">
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe =='Appointment'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Site Booking'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting"  >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe == 'Negotiation'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf= "pipe =='Closed Deals' " >
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+  </section> -->
+
+  <!-- <section style="padding: 11px;">
+    <div class="pipeline-small flat" *ngIf="pipe == null">
+      <a class="won noselect tipped-top pipeline planning"  title="Prospecting"
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"    id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"   
+        (click)="pipeline($event)" id="Appointment"  data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Prospecting'">
+      <a class="won noselect tipped-top pipeline "  data-value="Prospecting"
+      (click)="pipeline($event)" title="Prospecting" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Phone Call"
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Appointment"
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Site Booking"
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Negotiation"
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation"  >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Closed Deals"
+      (click)="pipeline($event)"   id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Phone Call'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting">
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe =='Appointment'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Site Booking'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting"  >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe == 'Negotiation'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf= "pipe =='Closed Deals' " >
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+  </section> -->
+
+
+  <section style="padding: 11px;" *ngIf="pipe">
+    <div class="pipeline-small flat" *ngIf="pipe == null ">
+      <a class="won noselect tipped-top pipeline planning"  title="Prospecting"
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"    id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"   
+        (click)="pipeline($event)" id="Appointment"  data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Prospecting'">
+      <a class="won noselect tipped-top pipeline "  data-value="Prospecting"
+      (click)="pipeline($event)" title="Prospecting" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Phone Call"
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Appointment"
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Site Booking"
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Negotiation"
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation"  >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  data-value="Closed Deals"
+      (click)="pipeline($event)"   id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Phone Call'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting">
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment" >
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe =='Appointment'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf="pipe == 'Site Booking'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting"  >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call">
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+
+    <div class="pipeline-small flat" *ngIf="pipe == 'Negotiation'">
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)"  id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="SiteBooking" data-value="Site Booking">
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline planning"  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals">
+        Closed Deals
+      </a>
+    </div>
+    <div class="pipeline-small flat" *ngIf= "pipe =='Closed Deals' " >
+
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="Prospecting" data-value="Prospecting" >
+        Prospecting
+      </a>
+      <a class="won noselect tipped-top pipeline"  
+      (click)="pipeline($event)" id="PhoneCall" data-value="Phone Call" >
+        Phone Call
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Appointment" data-value="Appointment">
+        Appointment
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="SiteBooking" data-value="Site Booking" >
+        Site Booking
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)" id="Negotiation" data-value="Negotiation" >
+        Negotiation
+      </a>
+      <a class="won noselect tipped-top pipeline "  
+      (click)="pipeline($event)"  id="ClosedDeals" data-value="Closed Deals" >
+        Closed Deals
+      </a>
+    </div>
+  </section>
+
+
+  <div class="ion-padding">
+    
+   
+    <ion-list id="sidenav"  >
+      <div  *ngIf="value">
+      
+     
+
+      <ion-item (click)="menuItemsecond()">
+        Task Details <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+      </ion-item>
+      <ion-item-group submenu [class.visible]="showSubmenuNew">
+        <ion-row>
+          <ion-col>
+            <p class="para2">Property Preferred</p>
+            <p class="para2">Property Price Range</p>
+            <p class="para2">References</p>
+            <p class="para2">Registered At</p>
+ 
+
+
+          </ion-col>
+          <ion-col>
+            <p class="para2">{{value.type_of_property_preferred}}</p>
+            <p class="para2">{{value.desirable_property_price_range}}</p>
+            <p class="para2">{{value.references}}</p>
+            <p class="para2">{{value.registered_at}}</p>
+
+          </ion-col>
+        </ion-row>
+      </ion-item-group>
+
+      <ion-item (click)="menuItemThird()">
+        Additional Information <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+      </ion-item>
+      <ion-item-group submenu [class.visible]="SubmenuNext">
+        <ion-row>
+          <ion-col>
+            <p class="para2">Passport </p>
+            <p class="para2">Phone</p>
+
+            <p class="para2">Date of Birth</p>
+            <p class="para2">Age</p>
+            <p class="para2">Martial Status</p>
+
+            <p class="para2">Gender</p>
+            <p class="para2">Nationality</p>
+            <p class="para2">Occupation</p>
+            <p class="para2">Salary Range</p>
+            <p class="para2">Address Line1</p>
+            <p class="para2">Address Line2</p>
+           
+            <p class="para2">Country</p>
+
+
+          </ion-col>
+          <ion-col>
+            <p class="para2">{{value.passport}}</p>
+            <p class="para2">{{value.phone_number}}</p>
+            <p class="para2">{{value.date_of_birth}}</p>
+            <p class="para2">{{value.age}}</p>
+            <p class="para2">{{value.marital_status}}</p>
+
+            <p class="para2">{{value.gender}}</p>
+            <p class="para2">{{value.nationality}}</p>
+            <p class="para2">{{value.occupation}}</p>
+            <p class="para2">{{value.salary_range}}</p>
+            <p class="para2">{{value.address_line1}}</p>
+            <p class="para2">{{value.address_line2}}</p>
+      
+            <p class="para2">{{value.country}}</p>
+
+          </ion-col>
+        </ion-row>
+      </ion-item-group>
+    </div>
+      <ion-item (click)="menuItemForth()">
+        Task Comment <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+      </ion-item>
+      <ion-item-group submenu [class.visible]="SubmenuNext1">
+
+        <div class="textarea">
+          <form  [formGroup]="UserCmt" (ngSubmit)="OnSubmit()">
+
+        
+          <ion-item style="border-bottom-right-radius: 20px !important;">
+            <ion-label position="floating">Write your Comment:</ion-label>
+            <ion-textarea formControlName="remarks"></ion-textarea>
+          </ion-item>
+          <div class="btn">
+            <ion-button color="primary" slot="end" type="submit" >Post Comment</ion-button>
+
+            <ion-button color="tertiary" slot="end" >Cancel</ion-button>
+          </div>
+        </form>
+        </div>
+        <br>
+        <section  *ngFor="let datas of cmtList">
+         <div class="cmtsec"  >
+          <div class="comment">
+            
+            <ion-label class="img1" >{{datas.sales_first_name | slice :0:1}}</ion-label>
+         
+          <div class="comment1">
+            <strong>{{datas.sales_first_name}}</strong>
+            <ion-text>{{datas.pipeline}} - {{datas.created_at | slice :0:19}}</ion-text>
+          </div>
+        </div>
+          <p class="para1">{{datas.remarks}}</p>
+          </div>
+        
+        </section>
+      </ion-item-group>
+      <br>
+
+
+
+    </ion-list>
+
+
+  </div>
+
+</ion-content>

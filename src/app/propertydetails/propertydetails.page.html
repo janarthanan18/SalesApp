@@ -1,0 +1,1134 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Property Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-segment [(ngModel)]="segment" swipe-gesture="true">
+
+    <ion-segment-button value="user" >
+      Home
+    </ion-segment-button>
+    <ion-segment-button value="card">
+      Lot
+    </ion-segment-button>
+    <ion-segment-button value="change">
+      Project
+    </ion-segment-button>
+
+  </ion-segment> -->
+
+
+  <!-- <div [ngSwitch]="segment">
+    <div *ngIf="data">
+      <ion-row *ngSwitchCase="'user'"> 
+
+        <ion-col size="6">
+          <ion-label position="floating">Place Name</ion-label>
+          <ion-item>
+            <ion-input> {{data.place_name}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Developer Name</ion-label>
+          <ion-item>
+
+            <ion-input>{{data.developer_name}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">House Type</ion-label>
+          <ion-item>
+            <ion-input>{{data.house_type}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Phase</ion-label>
+          <ion-item>
+            <ion-input>{{data.phase}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Type</ion-label>
+          <ion-item>
+            <ion-input>{{data.type}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Type of Lot</ion-label>
+          <ion-item>
+            <ion-input>{{data.type_of_lot}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Layout Direction</ion-label>
+          <ion-item>
+            <ion-input>{{data.layout_direction}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">House Status</ion-label>
+          <ion-item>
+            <ion-input>{{data.house_status}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Country</ion-label>
+          <ion-item>
+            <ion-input>{{data.country}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">State</ion-label>
+          <ion-item>
+            <ion-input>{{data.state}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">City</ion-label>
+          <ion-item>
+            <ion-input>{{data.city}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Total Unit</ion-label>
+          <ion-item>
+            <ion-input>{{data.total_unit}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Lot Number From</ion-label>
+          <ion-item>
+            <ion-input>{{data.lot_number_from}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Lot Number To</ion-label>
+          <ion-item>
+            <ion-input> {{data.lot_number_to}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Size</ion-label>
+          <ion-item>
+            <ion-input> {{data.size}}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Land Area</ion-label>
+          <ion-item>
+            <ion-input>{{data.land_area}} </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Buildup Area</ion-label>
+          <ion-item>
+            <ion-input> {{data.build_up_area}}</ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div *ngSwitchCase="'change' ">
+
+
+        <ion-row class="ion-padding">
+          <ion-col size="4">
+            <ion-label position="floating">Project Cost</ion-label>
+            <ion-item>
+              <ion-input>{{data.project_cost}}</ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label position="floating">Start Date</ion-label>
+            <ion-item>
+              <ion-input>{{data.start_date}}</ion-input>
+
+            </ion-item>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label position="floating">End Date</ion-label>
+            <ion-item>
+              <ion-input>{{data.end_date}}</ion-input>
+
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-label position="floating">Key Features</ion-label>
+            <ion-item>
+              <ion-textarea>{{data.key_feature}}</ion-textarea>
+
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-label position="floating">Facilities</ion-label>
+            <ion-item>
+              <ion-textarea>{{data.facilities}}</ion-textarea>
+
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+        <b>View Image</b>
+
+        <ion-row class="ion-padding">
+
+          <ion-col size="6" *ngFor="let data of value1 ">
+            <img src="{{data}}" (click)="gotoPhoto1(data)">
+
+          </ion-col>
+
+
+        </ion-row>
+
+
+        <ion-row class="ion-padding">
+          <ion-col size="12">
+            <ion-label position="floating">View Documents </ion-label>
+            <div style="display: flex;flex-direction: column;" *ngFor="let data of docs">
+              <a (click)="gotoDoc(data)"> {{data}}</a>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'card'">
+
+      <ion-card>
+        <h4>Shedule</h4>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <th>S.no </th>
+              <th>Schedule </th>
+              <th>Schedule Document </th>
+
+              <th>Action</th>
+            </tr>
+            <tr  *ngFor="let data of schedule">
+              <td>{{data.id}}</td>
+              <td>{{data.schedule}}</td>
+              <td>{{data.schedule_document}}</td>
+
+              <td>
+                <div class="dropdown dropdown-action">
+                  <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right ">
+                    <ion-text class="dropdown-item" (click)="gotoSchedule(data.schedule_document)">View</ion-text><br>
+                  </div>
+                </div>
+              </td>
+
+
+            </tr>
+
+
+          </table>
+        </div>
+      </ion-card>
+      <ion-card>
+        <h4>Corner Lot</h4>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <th>S.no </th>
+              <th>Lot Number </th>
+              <th>Unit Cost </th>
+              <th>Size </th>
+              <th>Direction </th>
+
+            </tr>
+            <tr *ngFor=" let corner of corners">
+              <td>{{corner.id}}</td>
+              <td>{{corner.lot_number}}</td>
+              <td>{{corner.unit_cost}}</td>
+              <td>{{corner.size}}</td>
+              <td>{{corner.direction}}</td>
+
+
+
+            </tr>
+
+
+          </table>
+        </div>
+      </ion-card>
+      <ion-card>
+        <h4>End Lot</h4>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <th>S.no </th>
+              <th>Lot Number </th>
+              <th>Unit Cost </th>
+              <th>Size </th>
+              <th>Direction </th>
+
+            </tr>
+            <tr *ngFor="let data of end">
+
+              <td>{{data.id}}</td>
+              <td>{{data.lot_number}}</td>
+              <td>{{data.unit_cost}}</td>
+              <td>{{data.size}}</td>
+              <td>{{data.direction}}</td>
+
+            
+
+
+            </tr>
+
+
+          </table>
+        </div>
+      </ion-card>
+      <ion-card>
+        <h4>Odd Lot</h4>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <th>S.no </th>
+              <th>Lot Number </th>
+              <th>Unit Cost </th>
+              <th>Size </th>
+              <th>Direction </th>
+
+            </tr>
+            <tr *ngFor="let data of odd">
+
+              <td>{{data.id}}</td>
+              <td>{{data.lot_number}}</td>
+              <td>{{data.unit_cost}}</td>
+              <td>{{data.size}}</td>
+              <td>{{data.direction}}</td>
+
+            
+
+
+            </tr>
+
+
+          </table>
+        </div>
+      </ion-card>
+      <ion-card>
+        <h4>Intermediate Lot</h4>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <th>S.no </th>
+              <th>Lot Number </th>
+              <th>Unit Cost </th>
+              <th>Size </th>
+              <th>Direction </th>
+
+              <!-- <th>Action</th> -->
+  <!-- </tr>
+            <tr *ngFor="let data of intermediate">
+
+              <td>{{data.id}}</td>
+              <td>{{data.lot_number}}</td>
+              <td>{{data.unit_cost}}</td>
+              <td>{{data.size}}</td>
+              <td>{{data.direction}}</td>
+             
+
+
+            </tr>
+
+
+          </table>
+        </div>
+      </ion-card>
+    </div>
+
+  </div>  -->
+
+
+
+  <!-- ************************************************************************************ -->
+
+  <Section>
+    <ion-slides pager="true" [options]="slideOpts">
+
+      <ion-slide *ngFor="let data of value1 ">
+        <img src="{{data}}" (click)="gotoPhoto1(data)">
+
+      </ion-slide>
+
+    </ion-slides>
+
+    <div>
+      <ion-segment [(ngModel)]="overviewsegment" swipe-gesture="true">
+
+        <ion-segment-button value="overview" color="success">
+          Overview
+        </ion-segment-button>
+        <ion-segment-button value="Lot" color="success">
+          Lot
+        </ion-segment-button>
+      </ion-segment>
+
+
+      <div [ngSwitch]="overviewsegment">
+        <div *ngSwitchCase="'overview'">
+          <section class="ion-padding">
+            <div>
+              <p class="para1">Sales Price Range</p>
+            </div>
+            <div *ngIf="data"> 
+              <span class="inline-block">
+                <span class="element-label symbol-unit">RM</span>
+                <span class="element-label price">{{data.project_cost}}</span>
+                <!-- ~ &nbsp;
+                <span class="inline-block">
+                  <span class="element-label symbol-unit">RM</span>
+                  <span class="element-label price">707,000</span>
+                </span> -->
+              </span>
+            </div>
+
+            <div id="details" class="link-target listing-detail-block" data-id="4307058">
+
+              <div class="listing-details-primary" *ngIf="data">
+                <h3 class="title-block">Property Details</h3>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Place Name</div>
+                      <div class="value-block" itemprop="value">{{data.place_name}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Developer Name</div>
+                      <div class="value-block" itemprop="value">{{data.developer_name}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">House type</div>
+                      <div class="value-block" itemprop="value">{{data.house_type}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Phase</div>
+                      <div class="value-block" itemprop="value">{{data.phase}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Type of lot</div>
+                      <div class="value-block" itemprop="value">{{data.type_of_lot}}</div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Type</div>
+                      <div class="value-block" itemprop="value">{{data.type}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Layout Direction</div>
+                      <div class="value-block" itemprop="value">{{data.layout_direction}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">House Status</div>
+                      <div class="value-block" itemprop="value">{{data.house_status}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Country</div>
+                      <div class="value-block" itemprop="value">{{data.country}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">State</div>
+                      <div class="value-block" itemprop="value">{{data.state}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr text-light-muted" itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">City</div>
+                      <div class="value-block" itemprop="value">{{data.city}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Size</div>
+                      <div class="value-block" itemprop="value">{{data.size}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Land Area</div>
+                      <div class="value-block" itemprop="value">{{data.land_area}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Build up Area</div>
+                      <div class="value-block" itemprop="value">{{data.land_area}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Lot Number From</div>
+                      <div class="value-block" itemprop="value">{{data.lot_number_from}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Lot Number To</div>
+                      <div class="value-block" itemprop="value">{{data.lot_number_to}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Total Unit</div>
+                      <div class="value-block" itemprop="value">{{data.total_unit}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+
+
+
+
+            <div id="details" class="link-target listing-detail-block" data-id="4307058">
+
+              <div class="listing-details-primary" *ngIf="data">
+                <h3 class="title-block">Project Details</h3>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Project Cost</div>
+                      <div class="value-block" itemprop="value">{{data.project_cost}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Start Date</div>
+                      <div class="value-block" itemprop="value">{{data.start_date}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">End Date</div>
+                      <div class="value-block" itemprop="value">{{data.end_date}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6">
+                    <div class="property-attr " itemprop="additionalProperty" itemscope=""
+                      itemtype="http://schema.org/PropertyValue">
+                      <div class="label-block" itemprop="name">Document</div>
+                      <div class="value-block" itemprop="value">{{data.phase}}</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <section>
+              <h3 class="title-block">Facilities & Amenities</h3>
+              <ion-segment [(ngModel)]="segment" swipe-gesture="true">
+
+                <ion-segment-button value="features" color="success">
+                  Key Features
+                </ion-segment-button>
+                <ion-segment-button value="facility" color="success">
+                  Facilities
+                </ion-segment-button>
+              </ion-segment>
+
+
+              <div [ngSwitch]="segment" *ngIf="data">
+                <div *ngSwitchCase="'features'">
+                  <ul>
+                    <li itemprop="amenityFeature">
+                      <ion-icon name="star-outline"></ion-icon>
+                      <span itemprop="name">{{data.key_feature}}</span>
+                      <meta itemprop="value" content="True">
+                    </li>
+
+                  </ul>
+                </div>
+                <div *ngSwitchCase="'facility'">
+                  <ul>
+                    <li itemprop="amenityFeature">
+                      <ion-icon name="checkmark-outline"></ion-icon>
+                      <span itemprop="name">{{data.facilities}}</span>
+                      <meta itemprop="value" content="True">
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+          </section>
+           <br>
+          <section class="ion-padding">
+            <h3>View Document</h3>
+            <!-- <div *ngFor="let file of docs" (click)="getpdf($event)">{{file}}
+            <iframe *ngIf="file" [src]="file" width="100%" height="100%" frameborder="0"></iframe>
+          </div> -->
+          
+          <!-- https://docs.google.com/gview?embedded=true&url=http://example.com/resources/myfile.pdf -->
+
+          <!-- "http://docs.google.com/viewer?url=" +  encodeURIComponent(link) + "&embedded=true" -->
+
+              <div *ngFor="let data of pdf">
+
+              <a  (click)="viewDocument(data)">{{data}}</a>
+              </div>
+
+                <!-- <pdf-viewer [src]="pdf" [original-size]="false">  </pdf-viewer> -->
+                <!-- <ngx-extended-pdf-viewer [src]="pdf" useBrowserLocale="true" [delayFirstView]="250" height="80vh"></ngx-extended-pdf-viewer>	 -->
+              <!-- <iframe width="100%" height="100%" [src]="view"  frameborder="0" allowfullscreen></iframe> -->
+
+          
+            <!-- <div *ngIf="pdf1">
+
+
+              <iframe  width="100%" height="100%" [src]="pdf1" frameborder="0" allowfullscreen></iframe>
+
+            </div> -->
+        
+
+            <!-- <div *ngIf="pdf2 ">
+              <div *ngIf="!pdf2 == undefined">
+
+
+                <iframe [src]="pdf2" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf3">
+              <div *ngIf="!pdf3 == undefined">
+
+
+                <iframe [src]="pdf3" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf4 ">
+              <div *ngIf="!pdf4 == undefined">
+
+
+                <iframe [src]="pdf4" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf5 ">
+              <div *ngIf="!pdf5 == undefined">
+
+
+                <iframe [src]="pdf5" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf6 ">
+              <div *ngIf="!pdf6 == undefined">
+
+
+                <iframe [src]="pdf6" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf7 ">
+              <div *ngIf="!pdf7 == undefined">
+
+
+                <iframe [src]="pdf7" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf8 ">
+              <div *ngIf="!pdf8 == undefined">
+
+
+                <iframe [src]="pdf8" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngIf="pdf9 ">
+              <div *ngIf="!pdf9 == undefined">
+
+
+                <iframe [src]="pdf9" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div> -->
+          </section>
+     
+
+          <section class="ion-padding">
+            <iframe *ngIf="pdfLink" [src]="pdfLink" width="100%" height="100%" frameborder="0"></iframe>
+            <br>
+            <p>
+              <strong>Legal Disclaimer:</strong>
+              The information contained in this website is subject to change and cannot form part of an offer or
+              contract. All renderings are artist’s impression only. All measurements are approximate. While every
+              reasonable care has been taken in preparing this website, All the items are subject to variations,
+              modifications and substitutions as may be required by the Authorities or recommended by the Architect or
+              Engineer.
+
+            </p>
+          </section>
+        </div>
+        <div *ngSwitchCase="'Lot'">
+
+          <ion-card>
+            <h4>House Type</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>House Type</th>
+                  <!-- <th>Property Id </th>
+                  <th>Created At</th> -->
+
+                  <!-- <th>Size </th>
+                  <th>Direction </th> -->
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of houseType">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.house_type}}</td>
+                  <!-- <td>{{data.property_id}}</td>
+                  <td>{{data.created_at}}</td> -->
+                  <!-- <td>{{data.direction}}</td> -->
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+
+
+          <ion-card>
+            <h4>Property Phase</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Phase Name </th>
+                  <th>Total Phase </th>
+                  <!-- <th>Panel MobileNo </th>
+
+                  <th>Panel Address</th>
+                  <th>Property Id </th> -->
+                  <!-- <th>Size </th>
+                  <th>Direction </th> -->
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of phase">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.phase_name}}</td>
+                  <td>{{data.total_phase}}</td>
+                  <!-- <td>{{data.size}}</td>
+                  <td>{{data.direction}}</td> -->
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+
+
+
+          <ion-card>
+            <h4>Panel</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Panel Name </th>
+                  <th>Panel Email </th>
+                  <th>Panel MobileNo </th>
+
+                  <th>Panel Address</th>
+                  <th>Panel OfficeNo </th>
+                  <!-- <th>Size </th>
+                  <th>Direction </th> -->
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of panel">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.panel_name}}</td>
+                  <td>{{data.panel_email}}</td>
+                  <td>{{data.panel_mobile_no}}</td>
+                  <td>{{data.panel_address}}</td>
+                  <td>{{data.panel_office_no}}</td>
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+
+
+          <ion-card>
+            <h4>Category</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Category Name </th>
+                  <!-- <th>Panel Email </th>
+                  <th>Panel MobileNo </th>
+
+                  <th>Panel Address</th>
+                  <th>Panel OfficeNo </th> -->
+                  <!-- <th>Size </th>
+                  <th>Direction </th> -->
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of category">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.category_name}}</td>
+                  <!-- <td>{{data.panel_email}}</td>
+                  <td>{{data.panel_mobile_no}}</td>
+                  <td>{{data.panel_address}}</td>
+                  <td>{{data.panel_office_no}}</td> -->
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>Shedule</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <!-- <th>Property Id </th> -->
+                  <th>Schedule </th>
+                  <th>Schedule Document </th>
+
+                  <th>Action</th>
+                </tr>
+                <tr *ngFor="let data of schedule">
+                  <td>{{data.id}}</td>
+                  <!-- <td>{{data.property_id}}</td> -->
+                  <td>{{data.schedule}}</td>
+                  <td>{{data.schedule_document}}</td>
+                  <!-- <td>Jana</td> -->
+
+                  <td>
+                    <div class="dropdown dropdown-action">
+                      <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right ">
+                        <ion-text class="dropdown-item" (click)="gotoSchedule(data.schedule_document)">View</ion-text>
+                        <br>
+                      </div>
+                    </div>
+                  </td>
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>BLocks</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Block Name </th>
+                  <th>Quantity</th>
+                  <th>Type</th>
+                  <th>Layout Direction </th>
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor=" let data of block">
+                  <td>{{data.id}}</td>
+                  <td>{{data.block_name}}</td>
+                  <td>{{data.quantity}}</td>
+                  <td>{{data.type}}</td>
+                  <td>{{data.layout_direction}}</td>
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>Corner Lot</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Lot Number </th>
+                  <th>Unit Cost </th>
+                  <th>Size </th>
+                  <th>Direction </th>
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor=" let corner of corners">
+                  <td>{{corner.id}}</td>
+                  <td>{{corner.lot_number}}</td>
+                  <td>{{corner.unit_cost}}</td>
+                  <td>{{corner.size}}</td>
+                  <td>{{corner.direction}}</td>
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>End Lot</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Lot Number </th>
+                  <th>Unit Cost </th>
+                  <th>Size </th>
+                  <th>Direction </th>
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of end">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.lot_number}}</td>
+                  <td>{{data.unit_cost}}</td>
+                  <td>{{data.size}}</td>
+                  <td>{{data.direction}}</td>
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>Odd Lot</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Lot Number </th>
+                  <th>Unit Cost </th>
+                  <th>Size </th>
+                  <th>Direction </th>
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of odd">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.lot_number}}</td>
+                  <td>{{data.unit_cost}}</td>
+                  <td>{{data.size}}</td>
+                  <td>{{data.direction}}</td>
+
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+          <ion-card>
+            <h4>Intermediate Lot</h4>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>S.no </th>
+                  <th>Lot Number </th>
+                  <th>Unit Cost </th>
+                  <th>Size </th>
+                  <th>Direction </th>
+
+                  <!-- <th>Action</th> -->
+                </tr>
+                <tr *ngFor="let data of intermediate">
+
+                  <td>{{data.id}}</td>
+                  <td>{{data.lot_number}}</td>
+                  <td>{{data.unit_cost}}</td>
+                  <td>{{data.size}}</td>
+                  <td>{{data.direction}}</td>
+                  <!-- <td>
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right ">
+                            <ion-text class="dropdown-item" (click)="gotoDocument()">Delete</ion-text><br>
+                          </div>
+                        </div>
+                      </td> -->
+
+
+                </tr>
+
+
+              </table>
+            </div>
+          </ion-card>
+
+      
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </Section>
+</ion-content>

@@ -1,0 +1,194 @@
+<!-- <ion-header>
+
+  <ion-toolbar>
+
+
+
+    <div class="header">
+
+      <ion-thumbnail slot="start">
+        <img src="assets/img/system-user.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Anne Lynch</h3>
+        <p>Acme Corporation</p>
+
+      </ion-label>
+      <ion-buttons slot="start">
+        <ion-button (click)="goBack()">
+          <ion-icon name="close-outline" style="float: right;" (click)="gotoPage('/leads')" slot="end"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-row>
+      <ion-col class="col1">
+        <strong>Lead Status </strong>
+        <strong>Name</strong>
+        <strong>Lead Source</strong>
+        <strong>Lead Rating</strong>
+        <strong>LeadOwner</strong>
+      </ion-col>
+      <ion-col class="col2">
+        <p>Not Contacted</p>
+        <p>Anne Lynch</p>
+        <p>Phone Enquiry</p>
+        <p>0</p>
+        <p>John Doe</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-segment value="all" mode="android" color="success" scrollable="true" [(ngModel)]="segment">
+
+      <ion-segment-button value="user">
+        Not Contacted
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        Attempted 
+      </ion-segment-button>
+      <ion-segment-button value="change">
+        Contact
+      </ion-segment-button>
+      <ion-segment-button value="convert">
+        Converted
+      </ion-segment-button>
+    </ion-segment>
+
+
+    <ion-segment value="all" mode="md" color="primary" [(ngModel)]="segments">
+
+      <ion-segment-button class="segment1" value="detail">
+        Detail
+      </ion-segment-button>
+      <ion-segment-button value="related">
+        Related
+      </ion-segment-button>
+      <ion-segment-button value="activity">
+        Activity
+      </ion-segment-button>
+
+    </ion-segment>
+
+
+    <div [ngSwitch]="segments">
+      <ion-list *ngSwitchCase="'detail'">
+
+        <p class="ion-padding">nil</p>
+      </ion-list>
+      <ion-row *ngSwitchCase="'related'">
+        <ion-card class="card1">
+          <p>Notes</p>
+          2
+        </ion-card>
+        <ion-card class="card2">
+          <p>Files</p>
+          0
+        </ion-card>
+      </ion-row>
+      <ion-row *ngSwitchCase="'activity'">
+        <ion-card class="card1">
+          <p>Total Activity</p>
+          2
+        </ion-card>
+        <ion-card class="card3">
+          <p>Last Activity</p>
+          0
+        </ion-card>
+      </ion-row>
+    </div>
+
+    <div [ngSwitch]="segment">
+      <ion-list *ngSwitchCase="'user'">
+
+     
+    
+  
+        <ion-item>
+          <ion-label>Additional Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Address Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tag Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Lead Conversion Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+
+      </ion-list>
+
+
+      <ion-list *ngSwitchCase="'card'">
+        <ion-item>
+          <ion-label>Lead Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Additional Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Address Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tag Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Lead Conversion Information</ion-label>
+          <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+        </ion-item>
+      </ion-list>
+
+      <ion-card *ngSwitchCase="'change'">
+        <ion-card-header>
+          Change Password
+        </ion-card-header>
+        <ion-card-content>
+          Your change password form here
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngSwitchCase="'convert'">
+        <ion-card-header>
+          Detail
+        </ion-card-header>
+        <ion-card-content>
+          Your change something
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <div class="container">
+  
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+    <div id="demo" class="collapse">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </div>
+ 
+
+</ion-content> -->

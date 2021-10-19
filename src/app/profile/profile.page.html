@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon mode="ios" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-title class="ion-text-center">Profile</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div  *ngIf="data">
+
+    <div class="ion-padding">
+    <img class="img1" src="assets/img/system-user.png">
+    </div>
+
+
+ 
+  <section class="ion-text-center sec1" *ngIf="data" >
+    <h3>{{user.first_name}}</h3>
+    <img class="img2"    src="assets/img/Platinum-Icon.png">
+  </section>
+
+
+
+  <section class="ion-text-center sec1"  *ngIf="!data"> 
+    <h3>{{user.first_name}}</h3>
+  </section>
+
+
+</div>
+
+
+ <div  *ngIf="user">
+
+
+ 
+  
+  <ion-card class="ion-padding">
+    <h3>Details</h3>
+    <ion-row>
+      <ion-col class="col1">
+        <strong> Phone: </strong>
+        <strong> Email: </strong>
+        <strong>Role</strong>
+       <strong> Birthday: </strong>
+        <strong> Address: </strong>
+              
+        <strong> Gender: </strong>
+        
+      </ion-col>
+
+      <ion-col class="col2">
+        <p>{{ user.mobile_number }}</p>
+        <p>{{ user.email }}</p>
+        <p>{{user.role}}</p>
+        <p>{{user.date_of_birth}}</p>
+        <p>{{user.address}}</p>
+        <p>{{user.gender}}</p>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <h3>Personal Information</h3>
+    <ion-row>
+      <ion-col class="col1">
+        <strong> Passport No </strong>
+        <strong> Tel </strong>
+        <strong> Nationality </strong>
+        <strong> Religion </strong>
+        <strong> Martial Status </strong>
+
+      </ion-col>
+      <ion-col class="col2">
+        <p>{{user.passport}}</p>
+        <p>{{user.mobile_number}}</p>
+        <p>{{user.nationality}}</p>
+        <p>{{user.religion}}</p>
+        <p>{{user.marital_status}}</p>
+       
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <h3>Emergency Contact</h3>
+    <ion-row>
+      <ion-col class="col1">
+        <strong> Name  </strong>
+        <strong> Relationship </strong>
+        <strong> Phone No</strong>
+      </ion-col>
+      <ion-col class="col2">
+        <p>{{user.emergency_contact_name}}</p>
+        <p>{{user.emergency_contact_type}}</p>
+        <p>{{user.emergency_contact_phone_number}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <h3>Bank information</h3>
+    <ion-row>
+      <ion-col class="col1">
+        <strong> Bank Name </strong>
+        <strong> Account No </strong>
+        <strong> IFSC Code </strong>
+
+      </ion-col>
+      <ion-col class="col2">
+        <p>{{user.bank_name}}</p>
+        <p>{{user.bank_account_number}}</p>
+        <p>{{user.bank_ifsc_code}}</p>
+
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <h3>Education Details</h3>
+    <ion-row>
+      <ion-col class="col1">
+        <strong>College</strong>
+        <strong> Degree</strong>
+        <strong> Position </strong>
+        <strong>Salary</strong>
+       </ion-col>
+
+      <ion-col class="col2">
+        <p>{{user.post_graduate_college}}</p>
+        <p>{{user.post_graduate_degree}}</p>
+        <p>{{user.position}}</p>
+        <p>{{user.salary_range}}</p>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>
+</div>
+</ion-content>

@@ -1,0 +1,68 @@
+// strong {
+//     font-weight: bold;
+//     color: white;
+//     font-size: 12px;
+//     font-family: sans-serif;
+// }
+// table, th, td {
+//     border: 1px solid lightgray;
+//     border-collapse: collapse;
+//   }
+//   th, td {
+//     padding: 8px;
+//     text-align: center;
+//     font-size: 16px;
+//   }
+//   th {
+//     text-align: center;
+//     color: black;
+//     font-size: 17px;
+//   }
+
+img {
+  width: 70px;
+  height: 68px;
+  clip-path: circle();
+}
+.sec1 {
+  display: flex;
+  justify-content: space-around;
+}
+h4 {
+  margin-top: auto;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+ion-card {
+  width: 44%;
+  height: 98px;
+  text-align: center;
+  margin: 6px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-row {
+  display: flex;
+  justify-content: center;
+}
+strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #442d2d;
+  margin: 4px;
+}
+ion-label {
+  font-size: 16px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+p {
+  margin: auto;
+  font-size: 18px;
+}
+.divClass {
+  margin-right: 44px;
+}

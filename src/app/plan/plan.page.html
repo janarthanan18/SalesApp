@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon mode="ios" name="arrow-back" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Plans</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+<ion-row >
+  <ion-col size="12" >
+<ion-card class="card1" (click)="gotoPage('/layoutplan')">
+<strong> Plan A</strong>
+</ion-card>
+
+  </ion-col>
+  <ion-col size="12">
+<ion-card class="card2" (click)="gotoPage('/layoutplan')">
+  <strong>Plan B</strong>
+
+</ion-card>
+  </ion-col >
+  <ion-col size="12">
+<ion-card class="card3" (click)="gotoPage('/layoutplan')" >
+  <strong>Plan C</strong>
+
+</ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

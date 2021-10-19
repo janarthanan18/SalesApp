@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Internals</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="internal" (ngSubmit)="internalForm()" *ngIf="data">
+      <ion-row>
+        <ion-col size="6">
+          <ion-label position="floating">First Name</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="first_name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Last Name</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="last_name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Passport</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="passport"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+
+          <ion-label position="floating">Email</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+
+          <ion-label position="floating">Age</ion-label>
+
+          <ion-item>
+            <ion-input type="text" formControlName="age"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Gender</ion-label>
+
+          <ion-item>
+            <ion-select placeholder="Select One" formControlName="gender">
+              <ion-select-option value="m">Male</ion-select-option>
+              <ion-select-option value="m">Female</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-item>
+            <ion-input type="number" formControlName="phone_number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Address Line 1</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="address_line1"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Address Line 2</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="address_line2"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Postal Code</ion-label>
+          <ion-item>
+            <ion-input type="number" formControlName="postal_code"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Occupation</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="occupation"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Salary Range</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="salary_range"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-label position="floating">Property Prefferred</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="property_category_preferred"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Property price Prefferred</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="property_price_preferred"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-label position="floating">Nationality</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="nationality"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">State</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="state"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Country</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="country"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label position="floating">Province</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="province"></ion-input>
+          </ion-item>
+        </ion-col>
+
+<!-- 
+        <ion-col size="6">
+          <ion-label position="floating">Created At</ion-label>
+          <ion-item>
+            <ion-datetime displayFormat="MM DD YY" formControlName="created_by" placeholder="Select Date">
+            </ion-datetime>
+          </ion-item>
+        </ion-col> -->
+
+
+      </ion-row>
+      <ion-button expand="block" mode="ios" type="submit">Submit</ion-button>
+    </form>
+  </ion-grid>
+</ion-content>

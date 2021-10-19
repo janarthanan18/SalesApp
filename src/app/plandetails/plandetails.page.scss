@@ -1,0 +1,30 @@
+// table {
+//     font-family: arial, sans-serif;
+//     border-collapse: collapse;
+//     width: 100%;
+//   }
+  
+//   td, th {
+//     border: 1px solid #dddddd;
+//     text-align: left;
+//     padding: 8px;
+//   }
+  
+//   tr:nth-child(even) {
+//     background-color: #dddddd;
+//   }
+table, th, td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 7px;
+  }
+  th {
+    text-align: center;
+  }
+  h3 {
+    padding: 7px;
+    font-size: 16px;
+    font-family: system-ui;
+  }

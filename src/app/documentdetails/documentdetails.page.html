@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Document Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>S.no	</th>
+        <th>First Name	</th>
+        <th>Last Name </th>
+        <th>Passport </th>
+        <th>Email	</th>
+        <th>Mobile Number		</th>
+        <th>Nationlaity</th>
+        <th>Martial Status</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Salary Range</th>
+        <th>Occupation</th>
+
+        <th>Action</th>
+      
+
+      </tr>
+      <tr *ngFor ="let data of document">
+        <td>{{data.document}}</td>
+        <td>{{data.first_name}}		</td>
+        <td>{{data.last_name}}	</td>
+        <td>{{data.passport}}	</td>
+        <td>{{data.email}}	</td>
+        <td>{{data.mobile_number}}	</td>
+        <td>{{data.nationality}}	</td>
+
+        <td>{{data.marital_status}}	</td>
+        <td>{{data.gender}}	</td>
+        <td>{{data.age}}	</td>
+        <td>{{data.salary_range}}	</td>
+        <td>{{data.occupation}}	</td>
+     
+
+         <td>
+          <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><ion-icon name="ellipsis-vertical-outline"></ion-icon></a>
+            <div class="dropdown-menu dropdown-menu-right ">
+              <ion-text class="dropdown-item" (click)="gotoDocument(data.id)">View</ion-text><br>
+           </div>
+        </div>   
+        </td>
+
+
+      </tr>
+    
+    
+    </table>
+  </div>
+
+</ion-content>

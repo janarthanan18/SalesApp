@@ -1,0 +1,30 @@
+ion-icon {
+    font-size: 23px;
+    margin-right: 13px;
+}
+ion-item  {
+      
+    margin-top: 8px;
+    background: aliceblue;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px #b7f3f9;
+}
+ion-label {
+        color: #cd5bb7;
+        margin-top: 2px !important;
+        margin-bottom: auto !important;
+}
+ion-button {
+	height:40px;
+    color: white;
+    --background: linear-gradient(to right, #9a55ff 0%, #fc6075 100%);
+    font-family: revert;
+    font-weight: 700;
+    margin-top: 20px;
+}
+ion-content {
+--background: #f7f7f7;
+}
+ion-icon {
+    margin-bottom: 25px;
+  }

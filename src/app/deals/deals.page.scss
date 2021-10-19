@@ -1,0 +1,104 @@
+
+.setting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+h3 {
+		font-size: 22px;
+		margin-top: auto;
+		margin-bottom: auto;
+		font-weight: 600;
+	}
+.icon {
+	font-size: 23px;
+}
+.title {
+	background: mediumspringgreen;
+    border-radius: 5px;
+    padding: 11px;
+
+ 
+}
+.col1 {
+	display: flex;
+    flex-direction: column;
+}
+ion-text {
+	color: floralwhite;
+	font-weight: 700;
+}
+strong {
+    color: darkgreen;
+    font-size: 25px;
+}
+ion-list {
+	background: mediumspringgreen;
+}
+ion-label {
+	color: darkgreen;
+}
+ion-row {
+	display: flex;
+    justify-content: space-between;
+}
+.col2 {
+	// text-align: center;
+    background: orange;
+    border-radius: 5px;
+	height: 18rem;
+	padding: 18px;
+	margin: 0;
+	
+}
+.col3 {
+	// text-align: center;
+    background: cornflowerblue;;
+    border-radius: 5px;
+	height: 18rem;
+	padding: 18px;
+	margin: 0;
+}
+.label1 {
+	color: white !important;
+    font-size: 23px !important;
+    font-weight: 600 !important;
+} 
+.track1 {
+	margin-top: 50px;
+    border-radius: 19px;
+    background: #f6c05c;
+	width: 98px;
+    padding: 5px;
+    margin-left: 15px;
+	display: flex;
+    justify-content: space-around;
+	align-items: center;
+}
+.track2 {
+	margin-top: 50px;
+    border-radius: 19px;
+	background: #98bbf8;
+    width: 98px;
+    padding: 5px;
+    margin-left: 15px;
+	display: flex;
+    justify-content: space-around;
+	align-items: center;
+
+}
+.icon1 {
+	color: white !important;
+    font-size: 25px;
+}
+.card {
+	height: 30%;
+	padding: 10px;
+}
+.week {
+	border: 1px solid;
+ 	width: 64px;
+    padding: 3px;
+  	border-radius: 10px;
+}

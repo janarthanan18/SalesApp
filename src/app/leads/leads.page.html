@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()">
+        <ion-icon mode="ios" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Leads</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card1" (click)="gotoPage('/createleads')">
+    <h4>New Lead</h4>
+  </ion-card>
+<ion-card>
+  <ion-item (click)="gotoPage('/leadsdetails')">
+    <ion-thumbnail slot="start">
+      <img src="assets/img/system-user.png">
+    </ion-thumbnail>
+    <ion-label>
+  
+      <h3>Anne Lynch</h3>
+    
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <p>Acme Corporation</p>
+      <p>	VP of Sales</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item (click)="gotoPage('/leadsdetails')">
+    <ion-thumbnail slot="start">
+      <img src="assets/img/system-user.png">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>Benneth</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <p>Acme Corporation</p>
+      <p>	VP of Sales</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <img src="assets/img/system-user.png">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>Anne Lynch</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <p>Acme Corporation</p>
+      <p>	VP of Sales</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <img src="assets/img/system-user.png">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>Des Ignayshun</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <p>Acme Corporation</p>
+      <p>	VP of Sales</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+</ion-content>

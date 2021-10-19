@@ -1,0 +1,55 @@
+.sec1 {
+    padding: 10px;
+    background: white;
+    font-size: 12px;
+}
+
+
+ion-col {
+    padding: 0;
+}
+.icon1 {
+    margin: 2px 9px 0px 0px;
+}
+ion-content {
+--background: #f7f7f7;
+}
+ion-card {
+    height: 88%;
+    padding: 10px;
+    margin: auto;
+    width: 89%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+img {
+    height: 79px;
+    width: 96%;
+}
+.divCss {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    border-radius: 5px;
+}
+b {
+    color: black;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.dropdown-action {
+    font-size: 18px;
+
+}
+.dropdown-menu-right {
+    min-width: 61px;
+    right: 17px;
+    top: -31px;
+    text-align: center;
+ }
+//  ion-col {
+//     padding: 0;
+// }
+ion-row {
+    margin-bottom: 10px;
+}

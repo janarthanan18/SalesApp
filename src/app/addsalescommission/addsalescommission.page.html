@@ -1,0 +1,464 @@
+<ion-toolbar>
+  <ion-buttons slot="start" style="position: absolute;">
+    <ion-button (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title class="ion-text-center">Add Sales Commission</ion-title>
+</ion-toolbar>
+
+<ion-content>
+
+
+  <ion-card class="ion-padding">
+    <b>Customer Info</b>
+    <br>
+    <ion-row class="row1" *ngIf="cust">
+      <ion-col size="6">
+       <strong>Customer Name</strong>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text>{{cust.first_name}} {{cust.last_name}}</ion-text>
+      </ion-col>
+      <ion-col size="6">
+        <strong>Phone Number</strong>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-text>{{cust.phone_number}}</ion-text>
+
+      </ion-col>
+      <ion-col size="6">
+        <strong>Email</strong>
+       </ion-col>
+      <ion-col size="6">
+        <ion-text>{{cust.email}}</ion-text>
+       </ion-col>
+    </ion-row>
+
+
+    <br>
+
+
+    <b>Property Information</b>
+    <br>
+    <ion-row class="row1" *ngIf="prop">
+      <ion-col size="6">
+       <strong>Property Name</strong>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text>{{prop.place_name}}</ion-text>
+      </ion-col>
+      <ion-col size="6">
+        <strong>City</strong>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-text>{{prop.city}}</ion-text>
+
+      </ion-col>
+      <ion-col size="6">
+        <strong>Lot Number</strong>
+       </ion-col>
+      <ion-col size="6">
+        <ion-text>{{prop.lot_number_from}}</ion-text>
+       </ion-col>
+
+       <ion-col size="6">
+        <strong>Project Cost</strong>
+       </ion-col>
+      <ion-col size="6">
+        <ion-text>{{prop.project_cost}}</ion-text>
+       </ion-col>
+
+    
+    </ion-row>
+  </ion-card>
+
+
+<!-- <ion-card class="ion-padding"> -->
+
+
+
+
+
+<div class="ion-padding" *ngIf="mycomm == null"    >
+
+ 
+<form  [formGroup]="SalesForm"  (ngSubmit)="OnSubmit()" >
+  <input type ="hidden">
+
+
+    <div class="col-sm-3"  id="members" (click)=member()>
+      <label class="col-form-label">Select Members<span class="text-danger">*</span></label>
+      <select class="form-control" name="members" formControlName="member"   placeholder="House Type">
+        <option disabled selected>-- Select --</option>
+                   <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                  </select>
+  </div>
+  
+  <div  class="col-sm-3  one" style="display: none;">
+      <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+      <select class="form-control" name="sales1"  formControlName="sales1"  placeholder="Type">
+          <option disabled selected  >-- Select --</option>
+          <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+  
+      </select>
+  </div>
+  
+  <div  class="col-sm-3  one" style="display: none;">
+      <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+      <input class="form-control" formControlName="bonus1"  type="text" [ngModel]="1.00"   readonly>
+  </div>
+
+  
+  <div class="col-sm-3 two" style="display: none;" (click)=type()>
+    <label class="col-form-label">Select Type<span class="text-danger">*</span></label>
+    <select class="form-control" name="type" formControlName="type1" placeholder="Type" >
+        <option disabled selected>-- Select --</option>
+            <option value="1">0.5 & 0.5</option>
+            <option value="2">0.66 & 0.33</option>
+            <option value="3">0.75 & 0.25</option>
+    </select>
+</div>
+
+
+ <!-- Two member First Start-->
+ <div class="col-sm-3 two-one" style="display: none;">
+  <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales1" formControlName="sales2"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales"  value="{{data.id}}" >{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 two-one" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus1"  formControlName="bonus2" [ngModel]="0.5" type="text" readonly>
+</div>
+
+<div class="col-sm-6 two-one">
+                            
+</div>
+<div class="col-sm-3 two-one" style="display: none;">
+    <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+    <select class="form-control" name="sales2" formControlName="sales3"  placeholder="Type">
+        <option disabled selected>-- Select --</option>
+        <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+    </select>
+</div>
+
+<div class="col-sm-3 two-one" style="display: none;">
+    <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+    <input class="form-control" name="bonus2" formControlName="bonus3" [ngModel]="0.5"   type="text"  readonly>
+</div>
+
+<!-- Two member First End-->
+
+ <!-- Two member Second Start-->
+ <div class="col-sm-3 two-two" style="display: none;">
+  <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales1" formControlName="sales4"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}">{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 two-two" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus3" formControlName="bonus4"  [ngModel]="0.66"  type="text" readonly>
+</div>
+
+<div class="col-sm-6 two-two">
+  
+</div>
+<div class="col-sm-3 two-two" style="display: none;">
+  <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales2" formControlName="sales5"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 two-two" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus4" formControlName="bonus5" [ngModel]="0.33"  type="text"  readonly>
+</div>
+<!-- Two member Second End-->
+
+
+
+ <!-- Two member Third Start-->
+ <div class="col-sm-3 two-three" style="display: none;">
+  <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales1" formControlName="sales6"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+    </select>
+</div>
+
+<div class="col-sm-3 two-three" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus5" formControlName="bonus6" [ngModel]="0.75"  type="text" readonly>
+</div>
+
+<div class="col-sm-6 two-three">
+  
+</div>
+<div class="col-sm-3 two-three" style="display: none;">
+  <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales2" formControlName="sales7"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 two-three" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus6" formControlName="bonus7" [ngModel]="0.25" type="text"  readonly>
+</div>
+<!-- Two member Third End-->
+
+ <!-- Three member Start-->
+ <div class="col-sm-3 three" style="display: none;" (click)=type2()>
+  <label class="col-form-label">Select Type<span class="text-danger">*</span></label>
+  <select class="form-control" name="type2" formControlName="type2"   placeholder="Type">
+      <option disabled selected>-- Select --</option>
+          <option value="1">0.5 & 0.25  &0.25</option>
+          <option value="2">0.33 & 0.33 & 0.33</option>
+  </select>
+</div>
+
+
+   <!-- Three member First Start-->
+   <div class="col-sm-3 three-one" style="display: none;" >
+    <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+    <select class="form-control" name="sales1"  formControlName="sales8"  placeholder="Type">
+        <option disabled selected>-- Select --</option>
+        <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+    </select>
+</div>
+
+<div class="col-sm-3 three-one" style="display: none;">
+    <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+    <input class="form-control" name="bonus1" formControlName="bonus8" placeholder="Bonus" [ngModel]="0.5"  type="text" readonly>
+</div>
+
+<div class="col-sm-6 three-one">
+    
+</div>
+<div class="col-sm-3 three-one" style="display: none;">
+    <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+    <select class="form-control" name="sales2" formControlName="sales9" placeholder="Type">
+        <option disabled selected>-- Select --</option>
+        <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+    </select>
+</div>
+
+<div class="col-sm-3 three-one" style="display: none;">
+    <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+    <input class="form-control" name="bonus2" placeholder="Bonus" formControlName="bonus9" [ngModel]="0.25"  type="text"  readonly>
+</div>
+<div class="col-sm-6 three-one">
+    
+</div>
+<div class="col-sm-3 three-one" style="display: none;">
+    <label class="col-form-label">Sales Person 3<span class="text-danger">*</span></label>
+    <select class="form-control" name="sales3" formControlName="sales10"  placeholder="Type">
+        <option disabled selected>-- Select --</option>
+        <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+    </select>
+</div>
+
+<div class="col-sm-3 three-one" style="display: none;">
+    <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+    <input class="form-control" name="bonus3" placeholder="Bonus" formControlName="bonus10" type="text"[ngModel]="0.25" readonly>
+</div>
+<!-- Three member First End-->
+
+ <!-- Three member Second Start-->
+ <div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales4" formControlName="sales11"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus1"  formControlName="bonus11" placeholder="Bonus" [ngModel]="0.33"  type="text" readonly>
+
+</div>
+
+<div class="col-sm-6 three-two">
+  
+</div>
+<div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales2" formControlName="sales12"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+     
+      <option *ngFor="let data of sales" value="{{data.id}}">{{data.first_name}}</option>
+
+  </select>
+</div>
+
+<div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus2" formControlName="bonus12" placeholder="Bonus" type="text" [ngModel]="0.33" readonly>
+</div>
+
+<div class="col-sm-6 three-two">
+  
+</div>
+<div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Sales Person 3<span class="text-danger">*</span></label>
+  <select class="form-control" name="sales3" formControlName="sales13"  placeholder="Type">
+      <option disabled selected>-- Select --</option>
+      <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+      
+  </select>
+</div>
+
+<div class="col-sm-3 three-two" style="display: none;">
+  <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+  <input class="form-control" name="bonus3" formControlName="bonus13" placeholder="Bonus" type="text" [ngModel]="0.33" readonly>
+</div>
+<!-- Three member Second End-->
+
+
+  <!-- One member start-->
+  <div class="col-sm-6 four">
+                    
+  </div>
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Sales Person 1<span class="text-danger">*</span></label>
+      <select class="form-control" name="sales1" formControlName="sales14"  placeholder="Type">
+              <option disabled selected>-- Select --</option>
+             
+              <option *ngFor="let data of sales" value="{{data.id}}">{{data.first_name}}</option>
+
+          </select>
+  </div>
+  
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+      <input class="form-control" name="bonus1" formControlName="bonus14" placeholder="Bonus"  [ngModel]="0.25"  type="text" readonly>
+  </div>
+
+  <div class="col-sm-6 four">
+  
+  </div>
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Sales Person 2<span class="text-danger">*</span></label>
+      <select class="form-control" name="sales2" formControlName="sales15"  placeholder="Type">
+              <option disabled selected>-- Select --</option>
+              <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+          </select>
+  </div>
+  
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+      <input class="form-control" name="bonus2" placeholder="Bonus" formControlName="bonus15"  [ngModel]="0.25" type="text" readonly>
+  </div>
+
+  <div class="col-sm-6 four">
+  
+  </div>
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Sales Person 3<span class="text-danger">*</span></label>
+      <select class="form-control" name="sales3" formControlName="sales16"  placeholder="Type">
+              <option disabled selected>-- Select --</option>
+              <option *ngFor="let data of sales" value="{{data.id}}" >{{data.first_name}}</option>
+
+          </select>
+  </div>
+  
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+      <input class="form-control" name="bonus3" formControlName="bonus16" placeholder="Bonus" [ngModel]="0.25" type="text" readonly>
+  </div>
+
+  <div class="col-sm-6 four">
+  
+  </div>
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Sales Person 4<span class="text-danger">*</span></label>
+      <select class="form-control" name="sales4" formControlName="sales17"  placeholder="Type">
+              <option disabled selected>-- Select --</option>
+              <option *ngFor="let data of sales"  value="{{data.id}}" >{{data.first_name}}</option>
+
+          </select>
+  </div>
+  
+  <div class="col-sm-3 four" style="display: none;">
+      <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
+      <input class="form-control" name="bonus4" placeholder="Bonus" formControlName="bonus17" [ngModel]="0.25"  type="text" readonly>
+  </div>
+<!-- One member End-->
+
+<br>
+<br>
+<br>
+<ion-button expand="block" color="success" type="submit "  >Submit</ion-button>
+<!-- <ion-button expand="block" color="success" type="submit" >Update</ion-button> -->
+
+
+</form>
+
+
+
+ 
+
+</div>
+
+
+<div style="overflow-x:auto;" class="ion-padding">
+  <strong >Commission Table</strong>
+  <br>
+  <table style="margin-top: 10px;">
+    <tr>
+      <!-- <th>S.no	</th> -->
+      <th>Sales Name	</th>
+      <th>Commission %	</th>
+
+    
+
+    </tr>
+    <tr *ngFor ="let data of commission">
+    <td>{{data.sales_name}}</td>
+    <td>{{data.percentage}}</td>
+    </tr>
+  
+  
+  </table>
+</div>
+
+
+<!-- </ion-card> -->
+
+
+
+
+
+
+
+
+
+
+</ion-content>

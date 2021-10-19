@@ -1,0 +1,50 @@
+
+
+
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="name">interested Property by {{name}}</ion-title>
+  </ion-toolbar>
+<br>
+
+  <div style="overflow-x:auto;" class="ion-padding">
+    <table>
+      <tr>
+        <th>S.no	</th>
+        <th>Developer Name</th>
+        <th>Property Name </th>
+      
+
+      
+
+      </tr>
+      <tr  *ngFor="let data of property">
+        <td>1</td>
+        <td>{{data.developer_name}}	</td>
+        <td>{{data.place_name}}	</td>
+      
+        
+            <!-- <td>
+          <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><ion-icon name="ellipsis-vertical-outline"></ion-icon></a>
+            <div class="dropdown-menu dropdown-menu-right ">
+              <ion-anchor class="dropdown-item">Edit</ion-anchor><br>
+              <ion-anchor class="dropdown-item" >Delete</ion-anchor>
+           </div>
+        </div>   
+        </td> -->
+
+
+      </tr>
+   
+    
+    </table>
+  </div>
+
+</ion-content>

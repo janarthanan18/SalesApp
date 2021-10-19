@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()" style="--background: white !important;">
+        <ion-icon mode="ios" name="arrow-back" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Book your slot</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content >
+<section class="sec1">
+ 
+  <ion-label class="ion-text-center">John Doe</ion-label>
+  <img slot="end" src="assets/img/system-user.png">
+</section>
+
+
+<ion-row>
+  <ion-col>
+    <h4>
+      Ratings
+       </h4>
+  </ion-col>
+  <ion-col>
+    <small>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star-half"></ion-icon>
+    </small>
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col>
+  
+     <h4>Slot</h4>
+  <p>24</p>
+      <h4>Plan</h4>
+  <p>PTD 200034</p>
+  </ion-col>
+  <ion-col>
+   
+    <h4>Price</h4>
+    <p>365783</p>
+    <h4>Details</h4>
+    <p>Nil</p>
+  </ion-col>
+</ion-row>
+
+<div class="ion-padding">
+<ion-button expand="block" (click)="gotoPage('/layoutview')">Book</ion-button>
+</div>
+ 
+
+
+
+
+</ion-content>
+<!-- <ion-footer>
+
+  <ion-button expand="full" (click)="gotoPage('/layoutview')">View</ion-button>
+</ion-footer> -->

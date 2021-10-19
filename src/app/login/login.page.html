@@ -1,0 +1,49 @@
+
+
+<ion-content class="ion-padding">
+	<br><br><br>
+	<br>
+	<div class="headCss">
+	<h3>Login</h3>
+	<br>
+	<!-- <p>Access to our dashboard</p> -->
+	</div>
+
+
+	<form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+		<ion-item>
+		  <ion-label position="floating" style="color: #d85ca7;"><ion-icon name="mail"></ion-icon> Email</ion-label>
+		
+		  <ion-input  name="email" formControlName="email"  type="text">
+		  </ion-input>
+		</ion-item>
+		<br>
+		<small color="medium" (click)="gotoPage('/forgotpassword')"> Forgot Password?</small>
+
+		<ion-item>
+		  <ion-label position="floating" style="color: #d85ca7;"><ion-icon name="eye-off"></ion-icon> Password</ion-label>
+		  <ion-input type="password" name="password"  formControlName="password" style="width:87%;"></ion-input>
+		  
+		</ion-item>
+		
+		
+		<br><br>
+		<ion-button expand="block" mode="ios" type="submit">Submit</ion-button>
+	
+<div class="checkbox">
+      
+<div class="check">
+		<!-- <ion-checkbox (click)="onSave()"  slot="start"></ion-checkbox>
+		<ion-text>Remember Me</ion-text> -->
+	</div>
+	 <small (click)="presentModal()"> Privacy policy</small>
+
+	</div>
+
+</form>
+
+<br>
+<!-- <p class="paraCss">Don't have an account? <ion-router-link href="/register">Register</ion-router-link></p> -->
+</ion-content>

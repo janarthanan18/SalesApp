@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="position: absolute;">
+      <ion-button (click)="goBack()" style="color: black;margin-bottom: 12px; ">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Lot Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding" *ngIf="assignhidevalue === true" >
+  <b>Search by Customer Name</b>
+
+  <ion-searchbar  showCancelButton="focus"
+  mode="ios"
+  debounce="500"
+  placeholder="Enter the Name"
+  animated 
+  (ionChange)="search($event)">
+</ion-searchbar>
+
+</div>
+<ion-grid  *ngFor="let name of list" >
+  <ion-row *ngIf = "!searchQuery">              
+      <ion-col size="11" *ngIf="assignhidevalue === true">
+          <p (click)="gotoCustomer()">{{ name.first_name }}</p>                 
+      </ion-col>   
+           
+  </ion-row>
+ 
+</ion-grid>
+<div *ngIf="searchQuery">
+   <p>Not Found</p>
+</div>
+<br>
+
+<ion-row *ngIf="customer">
+  <ion-col size="6">
+    <ion-label position="floating">First Name</ion-label>
+
+    <ion-item>
+      <ion-input  value="" >{{ customer.first_name}}</ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col  size="6">
+    <ion-label position="floating">Last Name</ion-label>
+
+    <ion-item>
+      <ion-input  value="" >{{customer.last_name}}</ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col  size="6">
+    <ion-label position="floating">Email</ion-label>
+
+    <ion-item>
+      <ion-input  disabled>{{customer.email}}</ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col  size="6">
+    <ion-label position="floating">Phone</ion-label>  
+
+    <ion-item>
+      <ion-input disabled>{{customer.phone_number}}</ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col  size="6">
+    <ion-label position="floating">Passport</ion-label>
+
+    <ion-item>
+      <ion-input  disabled>{{customer.passport}}</ion-input>
+    </ion-item>
+  </ion-col>
+  <br>
+  <br>
+  <br>
+
+  <ion-col size="12">
+  <ion-button expand="block" mode="ios" type="submit" (click)="submit()">Submit</ion-button>
+ </ion-col>
+</ion-row>
+</ion-content>
